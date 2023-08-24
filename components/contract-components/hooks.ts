@@ -609,9 +609,11 @@ export function useCustomContractDeployMutation(
 
         // deploy contract
         if (isZkSync) {
+          // const zkSigner = new Web3Provider(window.ethereum).getSigner();
+
           // Get metamask signer using zksync-web3 library -- for custom fields in signature
           const zkSigner = new Web3Provider(
-            window.ethereum as unknown as providers.ExternalProvider,
+            typeof window.ethereum as any as providers.ExternalProvider,
           ).getSigner();
 
           contractAddress = await zkDeployContractFromUri(

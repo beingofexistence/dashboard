@@ -41,8 +41,7 @@ yarn-error.log*
 # artifacts
 *.dbg.json
 
-#env
-.env
+
 # Sentry
 .sentryclirc
 
